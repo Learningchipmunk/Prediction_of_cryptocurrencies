@@ -5,7 +5,7 @@ The project aimed at predicting the behavior of a cryptocurrency with the given 
 You'll need to clone the repository in order to have a copy of the project up and running on your local machine for testing purposes.
 ### Prerequisites
 * Personally, I use Virtual Studio Code on a daily basis, and to run this code you need the python extension pack of VSC.
-If you do not use VSC, just remove the `#%%` in the beginning and the end of the file. </li>
+If you do not use VSC, just remove `#%%` from the beginning and the end of the file. </li>
 * Atom is another IDE that supports cell by cell compilation with the extension hydrogen. I wouldn't recommend it because of its slow paced initial boot.
 
 ### Testing
