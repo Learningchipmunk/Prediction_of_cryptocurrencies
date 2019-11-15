@@ -7,7 +7,7 @@ You'll need to clone the repository in order to have a copy of the project up an
 
 ### Prerequisites
 * Personally, I use Virtual Studio Code (VSC). Therefore, in order to run this code from the get-go, you'll need VSC and its python extension pack.<br>
-If you do not use VSC, just remove `#%%` from the beginning and the end of the file. </li>
+If you do not use VSC, just remove `#%%` from the beginning and the end of the python file. </li>
 * Atom is another IDE that supports cell by cell compilation with its extension hydrogen. I wouldn't recommend it because of its slow-paced initial boot.
 
 ### Testing
