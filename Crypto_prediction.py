@@ -1,3 +1,4 @@
+#%%
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,6 +10,8 @@ from statsmodels.tsa.stattools import acf
 from statsmodels.tsa.stattools import pacf
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.stattools import adfuller
+
+
 
 # Function to test the stationarity
 # It is stationary if the "Test Statistic" is greater than the Critical Values (in absolute)
@@ -38,19 +41,23 @@ df.Crypto.plot(figsize=(12,8), title= 'Crypto value', fontsize=14)
 plt.savefig('Crypto.png', bbox_inches='tight')
 
 # Testing stationarity using test_stationarity
+print(" Simple Stationarity Test : \n")
 test_stationarity(df.Crypto)
 
 
 # Testing stationarity of first difference
 df['first_difference'] =  df.Crypto - df.Crypto.shift(1)
+print("\n First Difference Stationarity Test : \n")
 test_stationarity(df.first_difference.dropna(inplace=False))
 
 # Testing the existance of a season
 test1 = [df.Crypto[12*i] for i in range(0,114//12)]
+print("\n Season Existance Test : \n")
 test_stationarity(test1)
 
 # Testing the existance of a seasonal first difference
 test2 = [test1[i] - test1[i+1]  for i in range(0,114//12-1)]
+print("\n Seasonal First Difference Existance Test : \n")
 test_stationarity(test2)
 
 # Running model with the parameters found from above
@@ -63,18 +70,21 @@ results = mod.fit()
 # Prediction of 12 extra points (an hour)
 predict_start = date_list[-1] + relativedelta(minutes=5)
 predict_date_list = [predict_start + relativedelta(minutes=5*x) for x in range(0, 12)]
-print(len(predict_date_list))
 future = pd.DataFrame(index=predict_date_list, columns= df.columns)
 df = pd.concat([df, future])
 
 # Plotting predictions
 predict = np.array(results.predict(start = 114, end = 125, dynamic= True))
-np.array(df.Crypto[:114])
+C = np.array(df.Crypto[:114])
 
-df['forecast'] = np.concatenate((np.array([0 for i in range(0,114)]) , predict))
-df[['Crypto', 'forecast']].plot(figsize=(12, 8))
+df['forecast'] = np.concatenate((np.array([C[i] for i in range(0,114)]) , predict))
+df[['forecast', 'Crypto']].plot(figsize=(12, 8))
 plt.savefig('Crypto_predict.png', bbox_inches='tight')
 
 # Outputting forecast
+print("\n Forecast : \n")
 for x in range(0, len(predict_date_list)):
     print(predict_date_list[x],df.forecast[x+114])
+
+
+# %%
