@@ -14,3 +14,7 @@ If you do not use VSC, just remove `#%%` from the beginning and the end of the p
 
 ### Testing
 Simply run the Python code with your favorite Python IDE with the right extensions and you are good to go! Just make sure to read the comments in the actual python file.
+
+## Author
+
+I'm [Jean-Charles LAYOUN](https://www.linkedin.com/in/alexandre-khoury). You can contact me by email at [jean-charles.layoun@polytechnique.edu](mailto:jean-charles.layoun@polytechnique.edu).
