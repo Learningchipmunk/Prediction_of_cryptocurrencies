@@ -17,4 +17,4 @@ Simply run the Python code with your favorite Python IDE with the right extensio
 
 ## Author
 
-I'm [Jean-Charles LAYOUN](https://www.linkedin.com/in/alexandre-khoury). You can contact me by email at [jean-charles.layoun@polytechnique.edu](mailto:jean-charles.layoun@polytechnique.edu).
+I'm [Jean-Charles LAYOUN](https://www.linkedin.com/in/JClayoun). You can contact me by email at [jean-charles.layoun@polytechnique.edu](mailto:jean-charles.layoun@polytechnique.edu).
